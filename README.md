@@ -72,66 +72,6 @@ python seba_crawler.py
 python seba_universal_clean_crawler.py
 ```
 
-運行後會提示：
-
-```text
-請輸入作品關鍵詞，例如 禁咒師 / 司命書 / 妖異奇談抄：
-```
-
-你可以輸入簡體或繁體，例如：
-
-```text
-禁咒师
-```
-
-腳本會自動搜索：
-
-```text
-禁咒师 / 禁咒師
-```
-
-然後顯示匹配到的分類，例如：
-
-```text
-01. 禁咒師 I
-02. 禁咒師 II
-03. 禁咒師 III
-04. 禁咒師 IV
-```
-
-你可以輸入單個編號：
-
-```text
-1
-```
-
-也可以多選：
-
-```text
-1,2,3
-```
-
-也可以選範圍：
-
-```text
-1-4
-```
-
-也可以選全部：
-
-```text
-all
-```
-
-選完分類後，腳本會詢問輸出方式：
-
-```text
-请选择输出方式：
-  1. 只输出合并 TXT
-  2. 只输出分章 TXT 文件夹
-  3. 两者都输出
-```
-
 輸入：
 
 ```text
@@ -202,26 +142,6 @@ txt      等同於 merged
 folder   等同於 split
 ```
 
-示例：
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode merged
-```
-
-只輸出合併 TXT。
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode split
-```
-
-只輸出分章 TXT 文件夾。
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode both
-```
-
-合併 TXT 和分章 TXT 文件夾都輸出。
-
 ### `--output`
 
 指定輸出文件名前綴。
@@ -238,37 +158,6 @@ python seba_crawler.py --term 禁咒师 --mode merged --output 禁咒師合集
 
 如果多選分類時使用 `--output`，腳本會自動追加序號和分類名，避免覆蓋文件。
 
-## 常用示例
-
-### 搜索作品並互動選擇
-
-```bash
-python seba_crawler.py
-```
-
-### 搜索禁咒師
-
-```bash
-python seba_crawler.py --term 禁咒师
-```
-
-### 搜索禁咒師並只輸出合併 TXT
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode merged
-```
-
-### 搜索禁咒師並只輸出分章文件夾
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode split
-```
-
-### 搜索禁咒師並同時輸出合併 TXT 和分章文件夾
-
-```bash
-python seba_crawler.py --term 禁咒师 --mode both
-```
 
 ### 直接抓取指定分類
 
@@ -282,30 +171,6 @@ python seba_crawler.py --category "https://seba.tw/category/fantasy-novel/incant
 python seba_crawler.py --category "https://seba.tw/category/fantasy-novel/incantation/incantation-i/" "https://seba.tw/category/fantasy-novel/incantation/incantation-2/"
 ```
 
-## 輸出結果
-
-假設你選擇了 `禁咒師 II`，輸出可能是：
-
-```text
-禁咒師_II_净化版.txt
-禁咒師_II_净化版_分章TXT/
-```
-
-如果選擇合併 TXT，會得到：
-
-```text
-禁咒師_II_净化版.txt
-```
-
-如果選擇分章文件夾，會得到：
-
-```text
-禁咒師_II_净化版_分章TXT/
-├─ 01_楔子 飛舞於空的麒麟.txt
-├─ 02_第一章 啟程前往九天之上.txt
-├─ 03_第二章 啟程前往九天之上（續）.txt
-└─ ...
-```
 
 ## 章節合併規則
 
